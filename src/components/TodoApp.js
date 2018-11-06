@@ -1,13 +1,11 @@
 import React from 'react';
-import { inputTask, addTask } from '../actions/tasks';
 
-export default function todoApp({ store }) {
-  const { task, tasks } = store.getState();
+export default function TodoApp({ task, tasks, inputTask, addTask }) {
   return(
     <div>
-      <input onChange = { (e) => store.dispatch(inputTask(e.target.value)) }/>
-      <button onClick = { (e) => store.dipatch(addTask(task)) }>Click</button>
-      <ul>
+      <input onChange = { (e) =>  inputTask(e.target.value) }/>
+      <button onClick = { (e) => addTask(task) }>Click</button>
+      {/* <ul>
         {
           tasks.map(function(item, i) {
             return (
@@ -15,7 +13,7 @@ export default function todoApp({ store }) {
             )
           })
         }
-      </ul>
+      </ul> */}
     </div>
   )
 }
