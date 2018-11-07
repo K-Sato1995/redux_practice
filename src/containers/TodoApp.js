@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TodoApp from '../components/TodoApp';
+import TodoApp from '../components/TodoApp.jsx';
 import { inputTask, addTask } from '../actions/tasks';
 
 function mapStateToProps({ task, tasks }) {

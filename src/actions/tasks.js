@@ -1,5 +1,5 @@
 //ACTIONS
-export inputTask = (task) => ({
+export const inputTask = (task) => ({
   type: 'INPUT_TASK',
   payload: {
     task

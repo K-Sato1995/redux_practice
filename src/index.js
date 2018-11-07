@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import tasksReducer from './reducers/tasks';
-import TodoApp from './components/TodoApp';
+import TodoApp from './containers/TodoApp';
 
 const store = createStore(tasksReducer);
 
