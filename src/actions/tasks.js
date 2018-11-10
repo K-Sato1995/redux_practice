@@ -7,7 +7,3 @@ export const addTask = task => ({
     task,
   },
 });
-
-export default function a(){
-  console.log('loglog')
-}
