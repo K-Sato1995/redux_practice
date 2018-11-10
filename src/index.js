@@ -20,6 +20,7 @@ function handleChange() {
 }
 
 store.subscribe(handleChange) // storeが変更されるたびにhandleChangeを実行する。
+// unsubscribe()を実行すると解除される。
 
 /// Dispatch & getState
 console.log(store.getState()); //=> {tasks: []} initialState
