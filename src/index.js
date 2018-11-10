@@ -1,15 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import tasksReducer from './reducers/tasks';
-import TodoApp from './containers/TodoApp';
-
+// ReducerとcreateStoreを用いてstoreの作成
 const store = createStore(tasksReducer);
 
-ReactDOM.render(
-  <Provider store = {store}>
-    <TodoApp />
-  </Provider>,
-  document.getElementById('root')
-);
+// 1つのReduxアプリに関して1つのstoreだけが存在する。
+// 様々なデータを扱う際にはreducerを細分化する事で対応する。
