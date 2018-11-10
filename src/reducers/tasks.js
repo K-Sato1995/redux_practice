@@ -11,8 +11,10 @@ export default function tasksReducer(state = initialState, action) {
     case 'ADD_TASK':
       return {
         ...state,
-        tasks: state.tasks.concat([action.task])
+        tasks: state.tasks.concat([action.payload.task]),
         // stateのtasksをにactionのtaskを加えた新たな配列を返す。
-      }
+      };
+    default:
+      return (state);
   }
 }
