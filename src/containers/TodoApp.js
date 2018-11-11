@@ -7,6 +7,7 @@ import { addTask, inputTask } from '..actions/tasks';
 // connect()の第1引数
 function mapStateToProps({ task, tasks }) {
   return {
+    // Storeにあるtask, tasksというStateをPropsに渡す。
     task,
     tasks,
   };
@@ -26,4 +27,5 @@ function mapDispatchToProps({ addTask, inputTask }) {
   }
 }
 
+// 特定のComponentに対してReactのcontextで保持しているStoreを提供する役割を担っている。
 export default connect(mapStateToProps, mapDispatchToProps)
