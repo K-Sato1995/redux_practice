@@ -2,3 +2,28 @@
 import { connect } from 'react-redux';
 import TodoApp from '../components/TodoApp';
 import { addTask, inputTask } from '..actions/tasks';
+
+// Storeから必要なStateを取り出し、ComponentのPropsに割り当てる為の関数。
+// connect()の第1引数
+function mapStateToProps({ task, tasks }) {
+  return {
+    task,
+    tasks,
+  };
+}
+
+// Actionのdispatchを行う処理をこの関数内に閉じることで、Componentからdispatchの概念を隠蔽する。
+// connect()の第2引数
+function mapDispatchToProps({ addTask, inputTask }) {
+  return {
+    // 該当のActionをDispatchさせる関数をPropsに渡す。
+    addTask(task) {
+      dispatch(addTask(task))
+    },
+    inputTask(task) {
+      dispatch(inputTask(task))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)
