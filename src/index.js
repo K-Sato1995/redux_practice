@@ -1,6 +1,9 @@
+import React from 'react';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { render } from 'react-dom';
 import tasksReducer from './reducers/tasks';
-import { addTask } from './actions/tasks';
+import TodoApp from './containers/TodoApp';
 
 // ReducerとcreateStoreを用いてstoreの作成
 const store = createStore(tasksReducer);
@@ -14,17 +17,14 @@ const store = createStore(tasksReducer);
 // subscribe: stateの状態が変化した際のコールバック関数の設定。
 // getState: 現在のstateの状態を取得。
 
-// Subscribe
-function handleChange() {
-  console.log('store got changed')
-}
-
-store.subscribe(handleChange) // storeが変更されるたびにhandleChangeを実行する。
-// unsubscribe()を実行すると解除される。
-
-/// Dispatch & getState
-console.log(store.getState()); //=> {tasks: []} initialState
-
-store.dispatch(addTask('New Task')); // addTaskの実行
-
-console.log(store.getState()); //=> {tasks: ["New Task"]}
+/////////// PROVIDER ////////////////////////////
+// dispatchはstoreに生えているメソッドのためコンポーネントからActionをdispatchするにはが必要です。
+// しかしdispatchしたいコンポーネント全てに対しStoreを最上位からバケツリレーするのは得策ではない。
+// <Provider>を用いることでconnect()という関数を使用可能になり、任意のコンポーネントに対してとStoreの紐付けを行うことができる。
+render (
+  // 最上位のコンポーネントを<Provider>でラップしpropsにstateを与える。
+  <Provider store = {store}>
+    <TodoApp />
+  </Provider>,
+  document.getElementById('root');
+);
