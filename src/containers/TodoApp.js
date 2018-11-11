@@ -28,4 +28,4 @@ function mapDispatchToProps({ addTask, inputTask }) {
 }
 
 // 特定のComponentに対してReactのcontextで保持しているStoreを提供する役割を担っている。
-export default connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
