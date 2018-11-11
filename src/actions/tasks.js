@@ -7,3 +7,11 @@ export const addTask = task => ({
     task,
   },
 });
+
+// 2inputされたタスクの値を認知する関数
+export const inpuTask = task => ({
+  type: 'INPUT_TASK',
+  payload: {
+    task,
+  },
+});
