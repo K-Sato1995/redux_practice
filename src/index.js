@@ -17,14 +17,14 @@ const store = createStore(tasksReducer);
 // subscribe: stateの状態が変化した際のコールバック関数の設定。
 // getState: 現在のstateの状態を取得。
 
-/////////// PROVIDER ////////////////////////////
+// ///////// PROVIDER ////////////////////////////
 // dispatchはstoreに生えているメソッドのためコンポーネントからActionをdispatchするにはが必要です。
 // しかしdispatchしたいコンポーネント全てに対しStoreを最上位からバケツリレーするのは得策ではない。
 // <Provider>を用いることでconnect()という関数を使用可能になり、任意のコンポーネントに対してとStoreの紐付けを行うことができる。
-render (
+render(
   // 最上位のコンポーネントを<Provider>でラップしpropsにstateを与える。
-  <Provider store = {store}>
+  <Provider store={store}>
     <TodoApp />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

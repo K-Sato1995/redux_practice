@@ -5,20 +5,18 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        {/* containerから渡されたものをthis.propsで取得可能*/}
-        <input type = 'text' onChange = { (e) =>  this.props.inputTask(e.target.value) }/>
-        <button onClick = { (e) => this.props.addTask(this.props.task) }>Click</button>
+        {/* containerから渡されたものをthis.propsで取得可能 */}
+        <input type="text" onChange={e => this.props.inputTask(e.target.value)} />
+        <button onClick={e => this.props.addTask(this.props.task)}>Click</button>
         <ul>
           {
-            this.props.tasks.map(function(item, i) {
-              return (
-                <li key = {i}>{item}</li>
-              )
-            })
+            this.props.tasks.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))
           }
         </ul>
       </div>
-    )
+    );
   }
 }
 
