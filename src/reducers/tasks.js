@@ -2,6 +2,7 @@
 const initialState = {
   task: '', // 1つ1つのタスクの値
   tasks: [], // 全てのタスク
+  check: false
 };
 
 // Reducerの定義
@@ -20,6 +21,11 @@ export default function tasksReducer(state = initialState, action) {
         ...state,
         task: action.payload.task,
         // stateのtaskにaction.payload.taskを与えて返す。
+      };
+    case 'CHECK_TASK':
+      return {
+        ...state,
+        check: !state.check,
       };
     default:
       return (state);

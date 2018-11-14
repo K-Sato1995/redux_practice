@@ -14,6 +14,8 @@ class TodoApp extends React.Component {
               <li key={i}>{item}</li>
             ))
           }
+          <h2>{ this.props.check ? 'ON' : 'OFF'}</h2>
+          <button onClick={e => this.props.checkTask()}>Switch</button>
         </ul>
       </div>
     );

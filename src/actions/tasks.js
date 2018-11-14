@@ -15,3 +15,7 @@ export const inputTask = task => ({
     task,
   },
 });
+
+export const checkTask = () => ({
+  type: 'CHECK_TASK'
+});

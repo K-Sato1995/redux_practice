@@ -7,7 +7,6 @@ import TodoApp from './containers/TodoApp';
 
 // ReducerとcreateStoreを用いてstoreの作成
 const store = createStore(tasksReducer);
-
 // 1つのReduxアプリに関して1つのstoreだけが存在する。
 // 様々なデータを扱う際にはreducerを細分化する事で対応する。
 
