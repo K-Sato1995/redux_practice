@@ -1,8 +1,10 @@
 // / Initial State(Storeの初期状態)
 const initialState = {
-  task: '', // 1つ1つのタスクの値
+  task: {
+    title:'',
+    completed: false
+  }, // 1つ1つのタスクの値
   tasks: [], // 全てのタスク
-  check: false
 };
 
 // Reducerの定義
@@ -19,13 +21,11 @@ export default function tasksReducer(state = initialState, action) {
     case 'INPUT_TASK':
       return {
         ...state,
-        task: action.payload.task,
+        task: {
+          title: action.payload.task,
+          completed: false,
+        },
         // stateのtaskにaction.payload.taskを与えて返す。
-      };
-    case 'CHECK_TASK':
-      return {
-        ...state,
-        check: !state.check,
       };
     default:
       return (state);

@@ -25,8 +25,8 @@ function mapDispatchToProps(dispatch) {
     inputTask(task) {
       dispatch(inputTask(task));
     },
-    checkTask() {
-      dispatch(checkTask())
+    checkTask(task) {
+      dispatch(checkTask(task))
     },
   };
 }
