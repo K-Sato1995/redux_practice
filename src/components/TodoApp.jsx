@@ -14,6 +14,7 @@ class TodoApp extends React.Component {
             this.props.tasks.map((item, i) => (
               <li key={i}>
                 {item.title}
+                <button>{ item.completed ? 'Done' : 'WIP'}</button>
               </li>
             ))
           }
