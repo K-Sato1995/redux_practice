@@ -10,7 +10,7 @@ function mapStateToProps({ task, tasks, check }) {
     // Storeにあるtask, tasksというStateをPropsに渡す。
     task,
     tasks,
-    check
+    check,
   };
 }
 
@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(inputTask(task));
     },
     checkTask(task) {
-      dispatch(checkTask(task))
+      dispatch(checkTask(task));
     },
   };
 }
