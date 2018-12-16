@@ -6,6 +6,7 @@ class TodoApp extends React.Component {
     return (
       <div>
         { console.log(this.props.tasks) }
+        { console.log(this.props.task) }
         {/* containerから渡されたものをthis.propsで取得可能 */}
         <input type="text" onChange={e => this.props.inputTask(e.target.value)} />
         <button onClick={e => this.props.addTask(this.props.task)}>Click</button>

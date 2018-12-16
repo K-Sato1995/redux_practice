@@ -1,16 +1,15 @@
 // Containers dir はContainer componentsを収納する為に使用される、
 import { connect } from 'react-redux';
 import TodoApp from '../components/TodoApp';
-import { addTask, inputTask, checkTask } from '../actions/tasks';
+import { addTask, inputTask } from '../actions/tasks';
 
 // Storeから必要なStateを取り出し、ComponentのPropsに割り当てる為の関数。
 // connect()の第1引数
-function mapStateToProps({ task, tasks, check }) {
+function mapStateToProps({ task, tasks }) {
   return {
     // Storeにあるtask, tasksというStateをPropsに渡す。
     task,
     tasks,
-    check,
   };
 }
 
@@ -24,9 +23,6 @@ function mapDispatchToProps(dispatch) {
     },
     inputTask(task) {
       dispatch(inputTask(task));
-    },
-    checkTask(task) {
-      dispatch(checkTask(task));
     },
   };
 }

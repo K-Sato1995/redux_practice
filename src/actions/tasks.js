@@ -15,10 +15,3 @@ export const inputTask = task => ({
     task,
   },
 });
-
-export const checkTask = id => ({
-  type: 'CHECK_TASK',
-  payload: {
-    id,
-  },
-});

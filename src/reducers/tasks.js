@@ -23,7 +23,6 @@ export default function tasksReducer(state = initialState, action) {
         ...state,
         task: {
           title: action.payload.task,
-          completed: false,
         },
         // stateのtaskにaction.payload.taskを与えて返す。
       };
