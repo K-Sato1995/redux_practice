@@ -10,9 +10,8 @@ export const addTask = task => ({
 });
 
 // 2inputされたタスクの値を認知する関数
-export const inputTask = task => ({
-  type: "INPUT_TASK",
-  payload: {
-    task
-  }
+export const inputChange = (target, val) => ({
+  type: "INPUT_CHANGE",
+  target: target,
+  val: val
 });

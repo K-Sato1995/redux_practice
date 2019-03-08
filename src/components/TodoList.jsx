@@ -14,7 +14,15 @@ class TodoApp extends React.Component {
         {/* containerから渡されたものをthis.propsで取得可能 */}
         <input
           type="text"
-          onChange={e => this.props.inputTask(e.target.value)}
+          placeholder="title"
+          value={this.props.task.title}
+          onChange={e => this.props.inputChange("title", e.target.value)}
+        />
+        <textarea
+          type="text"
+          placeholder="description"
+          value={this.props.task.description}
+          onChange={e => this.props.inputChange("description", e.target.value)}
         />
         <button onClick={e => this.props.addTask(this.props.task)}>
           Click
