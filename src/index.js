@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { render } from "react-dom";
 import tasksReducer from "./reducers/tasks";
-import TodoApp from "./containers/TodoApp";
+import App from "./containers/App";
 
 // ReducerとcreateStoreを用いてstoreの作成
 const store = createStore(tasksReducer);
@@ -23,7 +23,7 @@ const store = createStore(tasksReducer);
 render(
   // 最上位のコンポーネントを<Provider>でラップしpropsにstateを与える。
   <Provider store={store}>
-    <TodoApp />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
