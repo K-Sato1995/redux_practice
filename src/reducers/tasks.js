@@ -1,6 +1,6 @@
 // / Initial State(Storeの初期状態)
 const initialState = {
-  tasks: [], // 全てのタスク
+  taskList: [], // 全てのタスク
   task: {
     title: "",
     description: "",
@@ -16,7 +16,7 @@ export default function tasksReducer(state = initialState, action) {
     case "ADD_TASK":
       return {
         ...state,
-        tasks: state.tasks.concat([action.payload.task])
+        taskList: state.taskList.concat([action.payload.task])
         // stateのtasksにactionのtaskを加えた新たな配列を返す。
       };
     case "INPUT_CHANGE":

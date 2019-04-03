@@ -2,11 +2,11 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { render } from "react-dom";
-import tasksReducer from "./reducers/tasks";
+import rootReducer from "./reducers/index";
 import App from "./containers/App";
 
 // ReducerとcreateStoreを用いてstoreの作成
-const store = createStore(tasksReducer);
+const store = createStore(rootReducer);
 // 1つのReduxアプリに関して1つのstoreだけが存在する。
 // 様々なデータを扱う際にはreducerを細分化する事で対応する。
 
